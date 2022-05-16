@@ -1,0 +1,81 @@
+<nb-card>
+  <nb-card-header>
+    <h6>Create new event</h6>
+    <nb-icon icon="close-outline" (click)="closeModal.emit()"></nb-icon>
+  </nb-card-header>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <nb-card-body>
+      <div class="element">
+        <label class="label">Event name:</label>
+        <input nbInput
+          formControlName="name"
+          [status]="loginForm.get('name')?.touched && loginForm.get('name')?.invalid ? 'danger' : ''"
+          shape="round"
+          type="text"
+          placeholder="Shadowing">
+      </div>
+      <div class="element">
+        <label class="label">Edition:</label>
+        <input nbInput
+          formControlName="edition"
+          [status]="loginForm.get('edition')?.touched && loginForm.get('edition')?.invalid ? 'danger' : ''"
+          shape="round"
+          type="text"
+          placeholder="1">
+      </div>
+      <div class="element">
+        <label class="label">Start date:</label>
+        <input nbInput
+          [nbDatepicker]="startDateDatepicker"
+          formControlName="startDate"
+          [status]="loginForm.get('startDate')?.touched && loginForm.get('startDate')?.invalid ? 'danger' : ''"
+          shape="round"
+          placeholder="DD-MM-yyyy">
+        <nb-datepicker #startDateDatepicker format="DD-MM-yyyy"></nb-datepicker>
+      </div>
+      <div class="element">
+        <label class="label">End date:</label>
+        <input nbInput
+          [nbDatepicker]="endDateDatepicker"
+          formControlName="endDate"
+          [status]="loginForm.get('endDate')?.touched && loginForm.get('endDate')?.invalid ? 'danger' : ''"
+          shape="round"
+          placeholder="DD-MM-yyyy">
+        <nb-datepicker #endDateDatepicker format="DD-MM-yyyy"></nb-datepicker>
+      </div>
+      <div class="element">
+        <label class="label">Register start date:</label>
+        <input nbInput
+          [nbDatepicker]="registerStartDateDatepicker"
+          formControlName="registerStartDate"
+          [status]="loginForm.get('registerStartDate')?.touched && loginForm.get('registerStartDate')?.invalid ? 'danger' : ''"
+          shape="round"
+          placeholder="DD-MM-yyyy">
+        <nb-datepicker #registerStartDateDatepicker format="DD-MM-yyyy"></nb-datepicker>
+      </div>
+      <div class="element">
+        <label class="label">Register end date:</label>
+        <input nbInput
+          [nbDatepicker]="registerEndDateDatepicker"
+          formControlName="registerEndDate"
+          [status]="loginForm.get('registerEndDate')?.touched && loginForm.get('registerEndDate')?.invalid ? 'danger' : ''"
+          shape="round"
+          placeholder="DD-MM-yyyy">
+        <nb-datepicker #registerEndDateDatepicker format="DD-MM-yyyy"></nb-datepicker>
+      </div>
+      <div class="element">
+        <label class="label">Maximum number of participans:</label>
+        <input nbInput
+          formControlName="maximumNumberOfParticipans"
+          [status]="loginForm.get('maximumNumberOfParticipans')?.touched && loginForm.get('maximumNumberOfParticipans')?.invalid ? 'danger' : ''"
+          shape="round"
+          type="number"
+          placeholder="1">
+      </div>
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton type="submit" shape="semi-round" status="primary" size="small">Save</button>
+      <button nbButton shape="semi-round" size="small" (click)="closeModal.emit()">Cancel</button>
+    </nb-card-footer>
+  </form>
+</nb-card>

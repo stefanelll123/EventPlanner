@@ -1,0 +1,43 @@
+.event {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 125px;
+
+  border-radius: 10px;
+  box-shadow: 0px 8px 12px rgba(205, 205, 205, 0.3);
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 8px 12px rgba(205, 205, 205, 0.9);
+  }
+
+  .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: calc(100% - 40px);
+    margin: 0 20px;
+
+    p {
+      margin: 5px;
+    }
+
+    .title {
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .edition {
+      font-family: 'Open Sans Light';
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+}

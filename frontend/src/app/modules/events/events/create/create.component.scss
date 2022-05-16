@@ -1,0 +1,56 @@
+nb-card {
+  @media only screen and (max-width: 480px) {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+nb-card-header {
+  display: flex;
+  justify-content: space-between;
+
+  h6 {
+    margin: 0px;
+  }
+
+  nb-icon {
+    cursor: pointer;
+  }
+}
+
+nb-card-footer {
+  display: flex;
+  justify-content: center;
+
+  button {
+    min-width: 100px;
+    margin: 5px;
+  }
+}
+
+nb-card-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media only screen and (max-width: 480px) {
+    padding: 10px 20px;
+  }
+
+  @media only screen and (min-width: 480px) {
+    padding: 10px 100px;
+  }
+
+  .element {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+  }
+}

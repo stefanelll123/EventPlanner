@@ -19,7 +19,7 @@ def createEvent(event):
     return Result()
 
 def getEvents():
-    results = [toEventResponse(x).__dict__ for x in list(events.find({"isDeleted": {"$ne": True}}))]
+    results = [toEventResponse(x) for x in list(events.find({"isDeleted": {"$ne": True}}))]
     
     return Result(results)
 
@@ -28,7 +28,7 @@ def getEvent(id):
     if event == None:
         return Result.error('Cannot find event with id %s' % (id), 404)
     
-    return Result(toEventResponse(event).__dict__)
+    return Result(toEventResponse(event))
 
 def markEventAsComplete(id):
     event = events.find_one_and_update({"_id": ObjectId(id)}, {"$set": {"isActive": False}})

@@ -1,0 +1,12 @@
+<ng-template #dialog let-data let-ref="dialogRef">
+  <app-event-create (closeModal)="closeModal()" (closeOnSubmit)="closeOnSubmit()"></app-event-create>
+</ng-template>
+
+<div class="content-header">
+  <h6>Events</h6>
+  <button type="submit" nbButton shape="semi-round" status="primary" size="small" (click)="openCreateModal(dialog)">Create new</button>
+</div>
+
+<div class="events">
+  <app-event *ngFor="let event of events" [event]="event" (click)="seeEventDetails(event.id!)"></app-event>
+</div>
