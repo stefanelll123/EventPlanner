@@ -1,0 +1,101 @@
+<nb-accordion multi *ngIf="!!event">
+  <nb-accordion-item [expanded]="true">
+    <nb-accordion-item-header>
+      General
+    </nb-accordion-item-header>
+    <nb-accordion-item-body>
+      <form [formGroup]="updateEventForm" (ngSubmit)="onSubmit()">
+        <div class="input-with-label">
+          <label class="label">Event name *:</label>
+          <input nbInput
+            formControlName="name"
+            [status]="updateEventForm.get('name')?.touched && updateEventForm.get('name')?.invalid ? 'danger' : ''"
+            shape="round"
+            type="text"
+            placeholder="Shadowing">
+        </div>
+        <div class="input-with-label">
+          <label class="label">Edition:</label>
+          <input nbInput
+            formControlName="edition"
+            [status]="updateEventForm.get('edition')?.touched && updateEventForm.get('edition')?.invalid ? 'danger' : ''"
+            shape="round"
+            type="text"
+            placeholder="1">
+        </div>
+        <div class="input-with-label">
+          <label class="label">Start date *:</label>
+          <input nbInput
+            [nbDatepicker]="startDateDatepicker"
+            formControlName="startDate"
+            [status]="updateEventForm.get('startDate')?.touched && updateEventForm.get('startDate')?.invalid ? 'danger' : ''"
+            shape="round"
+            placeholder="DD-MM-yyyy">
+          <nb-datepicker #startDateDatepicker format="DD-MM-yyyy"></nb-datepicker>
+        </div>
+        <div class="input-with-label">
+          <label class="label">End date:</label>
+          <input nbInput
+            [nbDatepicker]="endDateDatepicker"
+            formControlName="endDate"
+            [status]="updateEventForm.get('endDate')?.touched && updateEventForm.get('endDate')?.invalid ? 'danger' : ''"
+            shape="round"
+            placeholder="DD-MM-yyyy">
+          <nb-datepicker #endDateDatepicker format="DD-MM-yyyy"></nb-datepicker>
+        </div>
+        <div class="input-with-label">
+          <label class="label">Register start date *:</label>
+          <input nbInput
+            [nbDatepicker]="registerStartDateDatepicker"
+            formControlName="registerStartDate"
+            [status]="updateEventForm.get('registerStartDate')?.touched && updateEventForm.get('registerStartDate')?.invalid ? 'danger' : ''"
+            shape="round"
+            placeholder="DD-MM-yyyy">
+          <nb-datepicker #registerStartDateDatepicker format="DD-MM-yyyy"></nb-datepicker>
+        </div>
+        <div class="input-with-label">
+          <label class="label">Register end date:</label>
+          <input nbInput
+            [nbDatepicker]="registerEndDateDatepicker"
+            formControlName="registerEndDate"
+            [status]="updateEventForm.get('registerEndDate')?.touched && updateEventForm.get('registerEndDate')?.invalid ? 'danger' : ''"
+            shape="round"
+            placeholder="DD-MM-yyyy">
+          <nb-datepicker #registerEndDateDatepicker format="DD-MM-yyyy"></nb-datepicker>
+        </div>
+        <div class="input-with-label">
+          <label class="label">Maximum number of participans *:</label>
+          <input nbInput
+            formControlName="maximumNumberOfParticipans"
+            [status]="updateEventForm.get('maximumNumberOfParticipans')?.touched && updateEventForm.get('maximumNumberOfParticipans')?.invalid ? 'danger' : ''"
+            shape="round"
+            type="number"
+            placeholder="1">
+        </div>
+        <button nbButton type="submit" shape="semi-round" status="primary" size="small" [disabled]="!updateEventForm.touched">Save</button>
+      </form>
+    </nb-accordion-item-body>
+  </nb-accordion-item>
+
+  <nb-accordion-item>
+    <nb-accordion-item-header>
+      Register form
+    </nb-accordion-item-header>
+    <nb-accordion-item-body>
+      A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+      Originally, nebula was a name for any diffuse astronomical object,
+      including galaxies beyond the Milky Way.
+    </nb-accordion-item-body>
+  </nb-accordion-item>
+
+  <nb-accordion-item>
+    <nb-accordion-item-header>
+      Feedback form
+    </nb-accordion-item-header>
+    <nb-accordion-item-body>
+      A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+      Originally, nebula was a name for any diffuse astronomical object,
+      including galaxies beyond the Milky Way.
+    </nb-accordion-item-body>
+  </nb-accordion-item>
+</nb-accordion>

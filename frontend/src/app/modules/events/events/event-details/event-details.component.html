@@ -1,1 +1,23 @@
-<p>Works</p>
+<div class="content-header">
+  <h6>{{event?.name}}</h6>
+  <p>Editia a {{event?.edition}}-a</p>
+</div>
+<div class="content">
+  <nb-tabset>
+    <nb-tab tabTitle="Calendar">
+      <p>List of <strong>users</strong>.</p>
+    </nb-tab>
+    <nb-tab tabTitle="Activities">
+      <p>List of <strong>orders</strong>.</p>
+    </nb-tab>
+    <nb-tab tabTitle="Participants">
+      <p>List of <strong>transactions</strong>.</p>
+    </nb-tab>
+    <nb-tab tabTitle="Blog">
+      <p>List of <strong>transactions</strong>.</p>
+    </nb-tab>
+    <nb-tab tabTitle="Configurations">
+      <app-event-configurations [event]="event"></app-event-configurations>
+    </nb-tab>
+  </nb-tabset>
+</div>

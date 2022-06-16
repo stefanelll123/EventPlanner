@@ -1,0 +1,12 @@
+.content-header {
+  display: flex;
+  flex-direction: column;
+
+  h6, p {
+    margin: 0;
+  }
+}
+
+.content {
+  margin-top: 10px;
+}

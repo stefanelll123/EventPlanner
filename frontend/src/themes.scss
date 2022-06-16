@@ -4,4 +4,7 @@
 
 
 $nb-themes: nb-register-theme((
-), custom-theme, default);
+  tabset-content-padding: 10px,
+  accordion-padding: 5px 10px,
+  accordion-shadow: none
+), eventplanner, default);

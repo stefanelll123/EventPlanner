@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { EventsRoutingModule } from './events-routing.module';
 import { CreateComponent } from './events/create/create.component';
+import { ConfigurationsComponent } from './events/event-details/configurations/configurations.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { EventComponent } from './events/event/event.component';
 import { EventsComponent } from './events/events.component';
@@ -13,7 +14,8 @@ import { EventsComponent } from './events/events.component';
     EventsComponent,
     EventComponent,
     CreateComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    ConfigurationsComponent
   ],
   imports: [
     CommonModule,

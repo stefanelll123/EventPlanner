@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { NbMomentDateModule } from '@nebular/moment';
-import { NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbDialogModule, NbIconModule, NbInputModule, NbLayoutModule, NbSpinnerModule } from '@nebular/theme';
+import { NbAccordionModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbDialogModule, NbIconModule, NbInputModule, NbLayoutModule, NbSpinnerModule, NbTabsetModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -18,8 +18,9 @@ import { NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbD
     NbCheckboxModule,
     NbDialogModule,
     NbDatepickerModule,
-
-    NbMomentDateModule
+    NbMomentDateModule,
+    NbTabsetModule,
+    NbAccordionModule
   ]
 })
 export class SharedModule { }

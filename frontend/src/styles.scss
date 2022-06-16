@@ -1,3 +1,9 @@
+@import 'themes';
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+};
 
 html, body { height: calc(100% - 66px); }
 
@@ -8,68 +14,15 @@ html, body { height: calc(100% - 66px); }
   src:url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRa1RVmPjeKy21_GQJaLlJI.woff) format('woff');
 }
 
-/*
-h3 {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
+.input-with-label {
+  display: flex;
+  flex-direction: column;
 
-  color: #1C1C1C;
-}
-
-input {
-  width: 200px;
-  height: 35px;
-
-  margin: 5px;
-  padding: 0 20px;
-
-  background-color: #fff;
-  border: 1px solid #C4C4C4;
-  border-radius: 10px;
-
-  &:focus {
-    outline: none;
-    border: 1px solid #FFA7BD;
-    color: #1C1C1C;
-    box-shadow: 0px 0px 12px rgba(255, 167, 189, 0.5);
-  }
-}
-
-::placeholder {
-  color: #C4C4C4;
-  opacity: 1; // Firefox
-}
-
-:-ms-input-placeholder { // Internet Explorer 10-11
- color: #C4C4C4;
-}
-
-::-ms-input-placeholder { // Microsoft Edge
- color: #C4C4C4;
-}
-
-.button-fill {
-  min-width: 100px;
-  height: 35px;
-  margin: 5px;
-
-  color: #fff;
-
-  background: #FFA7BD;
-  outline: none;
-  border: none;
-  border-radius: 10px;
-
-  &:hover {
-    box-shadow: 0px 0px 12px rgba(255, 167, 189, 0.5);
-    cursor: pointer;
+  label {
+    margin-bottom: 5px;
   }
 
-  &:active {
-    background: #FE8FAB;
+  input {
+    margin-bottom: 10px;
   }
 }
-*/

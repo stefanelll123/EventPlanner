@@ -12,7 +12,7 @@ export class CreateComponent {
   @Output() closeModal = new EventEmitter()
   @Output() closeOnSubmit = new EventEmitter()
 
-  loginForm: FormGroup = new FormGroup({
+  createEventForm: FormGroup = new FormGroup({
     name: new FormControl('', {
       validators: [Validators.required, Validators.minLength(8), Validators.maxLength(100)],
       updateOn: 'blur'
@@ -46,18 +46,18 @@ export class CreateComponent {
   constructor(private readonly service: EventsService, private datePipe: DatePipe) {}
 
   onSubmit(): void {
-    if (this.loginForm.invalid) {
-      this.loginForm.markAllAsTouched();
+    if (this.createEventForm.invalid) {
+      this.createEventForm.markAllAsTouched();
       return;
     }
 
-    let body = this.loginForm.value;
+    let body = this.createEventForm.value;
     body.startDate = this.datePipe.transform(body.startDate, 'dd-MM-yyyy');
     body.endDate = this.datePipe?.transform(body.endDate, 'dd-MM-yyyy');
     body.registerStartDate = this.datePipe.transform(body.registerStartDate, 'dd-MM-yyyy');
     body.registerEndDate = this.datePipe?.transform(body.registerEndDate, 'dd-MM-yyyy');
 
-    this.service.createEvent(this.loginForm.value)
+    this.service.createEvent(this.createEventForm.value)
       .subscribe(_ => this.closeOnSubmit.emit());
   }
 }

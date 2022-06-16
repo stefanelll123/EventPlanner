@@ -53,7 +53,7 @@ import { AuthInterceptor } from './shared/auth.interceptor';
     NbEvaIconsModule,
     NbIconModule,
 
-    NbThemeModule.forRoot({ name: 'default' }),
+    NbThemeModule.forRoot({ name: 'eventplanner' }),
     NbDialogModule.forRoot(),
     NbLayoutModule,
     NbSidebarModule.forRoot(),

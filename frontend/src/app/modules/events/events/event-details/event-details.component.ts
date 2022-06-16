@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { catchError, throwError } from 'rxjs';
+import { EventsService } from '../../events.service';
+import { Event } from '../../models';
 
 @Component({
   selector: 'app-event-details',
@@ -8,12 +11,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EventDetailsComponent implements OnInit {
   id!: string;
+  event: Event | null = null;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private readonly router: Router, private readonly service: EventsService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params['id'];
+
+      this.service.getEvent(this.id)
+        .pipe(catchError(err => {
+          this.router.navigateByUrl('/events');
+          return throwError(() => err);
+        }))
+        .subscribe(response => {
+          this.event = response;
+        })
    });
   }
 }
